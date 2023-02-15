@@ -6,7 +6,7 @@ if [ "$MSYSTEM" != "MINGW64" ]; then
 fi
 
 NAME=slide
-VER=0.2.0
+VER=0.3.0
 
 pkgname="mingw-w64-x86_64-$NAME"
 pkgver="$VER"
@@ -29,7 +29,7 @@ options=()
 install=
 changelog=
 source=("https://github.com/ten0s/$NAME/archive/refs/tags/$VER.tar.gz")
-md5sums=("2a7a978ceaaa56d0f4eb8690c0aa858d")
+md5sums=("32f97ddf586ffed55d01816a99ab6200")
 noextract=()
 validpgpkeys=()
 

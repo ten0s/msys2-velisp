@@ -1,0 +1,54 @@
+# Maintainer: Dmitry Klionsky <dm.klionsky@gmail.com>
+
+if [ "$MSYSTEM" != "MINGW64" ]; then
+        echo "ERROR: Unsupported MSYS shell: $MSYSTEM"
+        exit 1
+fi
+
+NAME=slide
+VER=0.2.0
+
+pkgname="mingw-w64-x86_64-$NAME"
+pkgver="$VER"
+pkgrel=1
+epoch=
+pkgdesc="AutoCAD slide library and command line utility"
+arch=('')
+url="https://github.com/ten0s/slide"
+license=('TODO')
+groups=()
+depends=()
+makedepends=()
+checkdepends=()
+optdepends=()
+provides=()
+conflicts=()
+replaces=()
+backup=()
+options=()
+install=
+changelog=
+source=("https://github.com/ten0s/$NAME/archive/refs/tags/$VER.tar.gz")
+md5sums=("2a7a978ceaaa56d0f4eb8690c0aa858d")
+noextract=()
+validpgpkeys=()
+
+prepare() {
+        cd "$NAME-$VER"
+        true
+}
+
+build() {
+        cd "$NAME-$VER"
+        make
+}
+
+check() {
+        cd "$NAME-$VER"
+        true
+}
+
+package() {
+        cd "$NAME-$VER"
+        make install PREFIX="$pkgdir/"
+}

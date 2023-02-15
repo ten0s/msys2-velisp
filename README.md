@@ -8,21 +8,31 @@ $ git clone https://github.com/ten0s/msys2-velisp
 $ cd msys2-velisp/
 ```
 
-## Build
+## Slide
 
 ```
 $ cd slide/
+```
+
+### Build
+
+```
 $ makepkg-mingw -sCLf
 ```
 
-## Install
+### Rebuild (for debug)
+
+```
+$ makepkg-mingw -ef
+```
+
+### Install
 
 ```
 $ pacman -U mingw-w64-x86_64-slide-*.pkg.tar.zst
 ```
 
-
-## Uninstall
+### Uninstall
 
 ```
 $ pacman -R mingw-w64-x86_64-slide

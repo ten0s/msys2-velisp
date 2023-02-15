@@ -50,5 +50,5 @@ check() {
 
 package() {
         cd "$NAME-$VER"
-        make install PREFIX="$pkgdir/"
+        make install WHERE=msys2 PREFIX="$pkgdir/mingw64"
 }

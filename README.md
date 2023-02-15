@@ -1,19 +1,32 @@
 [MSYS2](https://www.msys2.org/) dependencies for
 [VeLisp](https://github.com/ten0s/velisp)
 
+Inside MinGW64 shell
+
+```
+$ git clone https://github.com/ten0s/msys2-velisp
+$ cd msys2-velisp/
+```
+
+## Build
+
+```
+$ cd slide/
+$ makepkg-mingw -sCLf
+```
+
 ## Install
 
 ```
-
+$ pacman -U mingw-w64-x86_64-slide-*.pkg.tar.zst
 ```
 
 
 ## Uninstall
 
 ```
-
+$ pacman -R mingw-w64-x86_64-slide
 ```
-
 
 ## Devel
 

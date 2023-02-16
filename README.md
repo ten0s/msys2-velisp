@@ -17,25 +17,25 @@ $ cd slide/
 ### Build
 
 ```
-$ makepkg-mingw -sCLf
+$ make
 ```
 
 ### Rebuild (for debug)
 
 ```
-$ makepkg-mingw -ef
+$ make rebuild
 ```
 
 ### Install
 
 ```
-$ pacman -U mingw-w64-x86_64-slide-*.pkg.tar.zst
+$ make install
 ```
 
 ### Uninstall
 
 ```
-$ pacman -R mingw-w64-x86_64-slide
+$ make uninstall
 ```
 
 ## Devel

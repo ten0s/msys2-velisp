@@ -1,24 +1,29 @@
 # Maintainer: Dmitry Klionsky <dm.klionsky@gmail.com>
 
 if [ "$MSYSTEM" != "MINGW64" ]; then
-        echo "ERROR: Unsupported MSYS shell: $MSYSTEM"
-        exit 1
+    echo "ERROR: Unsupported MSYS shell: $MSYSTEM"
+    exit 1
 fi
 
-NAME=slide
-VER=0.3.0
-
-pkgname="mingw-w64-x86_64-$NAME"
-pkgver="$VER"
+_realname=slide
+pkgname="${MINGW_PACKAGE_PREFIX}-${_realname}"
+pkgver=0.4.0
 pkgrel=1
 epoch=
 pkgdesc="AutoCAD slide library and command line utility"
-arch=('')
-url="https://github.com/ten0s/slide"
+arch=('any')
+url="https://github.com/ten0s/${_realname}"
 license=('TODO')
 groups=()
-depends=()
-makedepends=()
+depends=(
+    "${MINGW_PACKAGE_PREFIX}-cairo"
+    "${MINGW_PACKAGE_PREFIX}-gobject-introspection"
+    "${MINGW_PACKAGE_PREFIX}-gtk3"
+)
+makedepends=(
+    "${MINGW_PACKAGE_PREFIX}-boost"
+    "${MINGW_PACKAGE_PREFIX}-gcc"
+)
 checkdepends=()
 optdepends=()
 provides=()
@@ -28,27 +33,29 @@ backup=()
 options=()
 install=
 changelog=
-source=("https://github.com/ten0s/$NAME/archive/refs/tags/$VER.tar.gz")
-md5sums=("32f97ddf586ffed55d01816a99ab6200")
+source=("https://github.com/ten0s/${_realname}/archive/refs/tags/${pkgver}.tar.gz")
+md5sums=("db6ff2416c7bdbac6ce1b6301d536062")
 noextract=()
 validpgpkeys=()
 
+_srcdir="${_realname}-${pkgver}"
+
 prepare() {
-        cd "$NAME-$VER"
+        cd "${_srcdir}"
         true
 }
 
 build() {
-        cd "$NAME-$VER"
+        cd "${_srcdir}"
         make
 }
 
 check() {
-        cd "$NAME-$VER"
+        cd "${_srcdir}"
         true
 }
 
 package() {
-        cd "$NAME-$VER"
+        cd "${_srcdir}"
         make install PREFIX="$pkgdir/mingw64"
 }

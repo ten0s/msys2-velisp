@@ -13,7 +13,7 @@ epoch=
 pkgdesc="AutoCAD slide library and command line utility"
 arch=('any')
 url="https://github.com/ten0s/${_realname}"
-license=('GPL-3.0-or-later')
+license=('spdx:GPL-3.0-or-later')
 groups=()
 depends=(
     "${MINGW_PACKAGE_PREFIX}-cairo"

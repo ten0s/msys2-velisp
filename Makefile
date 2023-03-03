@@ -27,3 +27,10 @@ clean:
 		$(MAKE) clean          && \
 		cd ..                   ; \
 	done
+
+checksum:
+	@for subdir in $(SUBDIRS); do \
+		cd $$subdir            && \
+		$(MAKE) checksum       && \
+		cd ..                   ; \
+	done

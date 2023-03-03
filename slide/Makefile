@@ -10,7 +10,7 @@ install:
 uninstall:
 	pacman --noconfirm --remove mingw-w64-x86_64-slide
 
-md5sum:
+checksum:
 	MSYSTEM=MINGW64 bash -c 'source ./PKGBUILD && curl -sL $$source | md5sum | awk "{ print $$1 }"'
 
 clean:

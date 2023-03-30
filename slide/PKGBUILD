@@ -7,9 +7,9 @@ fi
 
 _realname=slide
 pkgname="${MINGW_PACKAGE_PREFIX}-${_realname}"
-pkgver=0.8.0
+pkgver=0.9.0
 source=("https://github.com/ten0s/${_realname}/archive/refs/tags/${pkgver}.tar.gz")
-md5sums=("dad109934ae56f8a6cee8c87896c34dc")
+md5sums=("2b3bef814f82f302a29cc23bb369a89d")
 pkgrel=1
 epoch=
 pkgdesc="AutoCAD slide library and command line utilities"
